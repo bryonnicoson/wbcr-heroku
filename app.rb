@@ -3,5 +3,5 @@ Budler.require()
 
 get '/' do |
 	
-	hash.to_json
+	 {:test => “msg”}.to_json
 end
