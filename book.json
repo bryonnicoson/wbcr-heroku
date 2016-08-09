@@ -1,0 +1,21 @@
+{
+	"title": "Hitchhiker's Guide to the Galaxy",
+	"author": "Douglas Adams",
+	"yearPublished": 1979,
+	"Setting": "Islington, UK + Outer space",
+	"isFiction": true,
+	"Characters": ["Arthur", "Ford", "Trillian", "Zaphod", "Marvin"],
+
+
+    "region": {
+        "span": {
+            "latitude_delta": 0.00033824999999865213, 
+            "longitude_delta": 0.007521580000002359
+        }, 
+        "center": {
+            "latitude": 41.890496850000005, 
+            "longitude": -87.6303873
+        }
+    },
+    "total": 63
+}
