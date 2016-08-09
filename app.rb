@@ -1,5 +1,4 @@
 require 'bundler'
-require 'Crack'
 Bundler.require()
 
 get '/' do
@@ -8,5 +7,5 @@ end
 
 def xml_feed_to_json(url)
 	@xml = HTTParty.get(url)
-	Crack::XML.parse(@xml).to_json
+	@xml.to_json
 end

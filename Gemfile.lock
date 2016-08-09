@@ -1,8 +1,6 @@
 GEM
   remote: https://rubygems.org/
   specs:
-    crack (0.4.3)
-      safe_yaml (~> 1.0.0)
     firebase (0.2.6)
       httpclient
       json
@@ -14,7 +12,6 @@ GEM
     rack (1.6.4)
     rack-protection (1.5.3)
       rack
-    safe_yaml (1.0.4)
     sinatra (1.4.7)
       rack (~> 1.5)
       rack-protection (~> 1.4)
@@ -25,7 +22,6 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  crack
   firebase
   httparty
   json
