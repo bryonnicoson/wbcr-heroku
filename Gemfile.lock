@@ -3,8 +3,12 @@ GEM
   specs:
     crack (0.4.3)
       safe_yaml (~> 1.0.0)
+    firebase (0.2.6)
+      httpclient
+      json
     httparty (0.14.0)
       multi_xml (>= 0.5.2)
+    httpclient (2.8.1)
     json (2.0.2)
     multi_xml (0.5.5)
     rack (1.6.4)
@@ -22,6 +26,7 @@ PLATFORMS
 
 DEPENDENCIES
   crack
+  firebase
   httparty
   json
   sinatra
