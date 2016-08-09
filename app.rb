@@ -1,8 +1,7 @@
 require 'bundler'
-Budler.require()
+Bundler.require()
 
-get '/' do 
-
+get '/' do
 	file = File.read('book.json')
 	hash = JSON.parse(file)
 	hash.to_json
