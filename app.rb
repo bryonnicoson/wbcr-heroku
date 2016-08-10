@@ -10,11 +10,15 @@ def xml_feed_to_json(url)
 	# convert all breed Strings to Arrays
 	# need to step through each pet in "[petfinder][pets]"
 	@xml["petfinder"]["pets"].each do |pet|
+		binding.pry
 
-	if pet["breeds"]["breed"].class == String
-		arr = Array.new
-		arr.push(pet["breeds"]["breed"])
-		pet["breeds"]["breed"] = arr
+		if pet["breeds"]["breed"].class == String
+			arr = Array.new
+			arr.push(pet["breeds"]["breed"])
+			pet["breeds"]["breed"] = arr
+		end
 	end
+
+	
 	@xml.to_json
 end
