@@ -8,18 +8,22 @@ end
 def xml_feed_to_json(url)
 	@xml = HTTParty.get(url)
 	# convert all breed Strings to Arrays
-	# need to step through each pet in "[petfinder][pets]"
+
 	@xml["petfinder"]["pets"].each do |pet|
 		#binding.pry
-		breed = pet[1][0]["breeds"]["breed"]
-		if breed.class == String
-			arr = Array.new
-			arr.push(breed)
-			#pet["breeds"]["breed"] = arr
-			pet[1][0]["breeds"]["breed"] = arr
+		i = 0
+		length = pet[1].size
+
+		while i < length
+			breed = pet[1][i]["breeds"]["breed"]
+			if breed.class == String
+				arr = Array.new
+				arr.push(breed)
+				pet[1][i]["breeds"]["breed"] = arr
+			end
+			i += 1
 		end
 	end
-
 	
 	@xml.to_json
 end
