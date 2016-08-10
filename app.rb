@@ -7,5 +7,11 @@ end
 
 def xml_feed_to_json(url)
 	@xml = HTTParty.get(url)
+	# convert all breed Strings to Arrays
+	if @xml["petfinder"]["pets"]["pet"]["breeds"]["breed"].class == String
+		arr = Array.new
+		arr.push(@xml["petfinder"]["pets"]["pet"]["breeds"]["breed"])
+		@xml["petfinder"]["pets"]["pet"]["breeds"]["breed"] = arr
+	end
 	@xml.to_json
 end
