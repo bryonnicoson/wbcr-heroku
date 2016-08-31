@@ -3,8 +3,8 @@ Bundler.require()
 
 get '/' do
 #	xml_feed_to_json('http://api.petfinder.com/shelter.getPets?id=IL542&count=1000&key=4f968c74b90183bfb8519a8cf64844f2&callback=?')
-	:petfinder_api_url => ENV['PETFINDER_API_URL']
-	xml_feed_to_json(petfinder_api_url)
+	
+	xml_feed_to_json(ENV['PETFINDER_API_URL'])
 end
 
 def xml_feed_to_json(url)
