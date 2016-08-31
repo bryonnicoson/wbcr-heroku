@@ -2,13 +2,15 @@ require 'bundler'
 Bundler.require()
 
 get '/' do
-	xml_feed_to_json('http://api.petfinder.com/shelter.getPets?id=IL542&count=1000&key=4f968c74b90183bfb8519a8cf64844f2&callback=?')
+#	xml_feed_to_json('http://api.petfinder.com/shelter.getPets?id=IL542&count=1000&key=4f968c74b90183bfb8519a8cf64844f2&callback=?')
+	:petfinder_api_url => ENV['PETFINDER_API_URL']
+	xml_feed_to_json(petfinder_api_url)
 end
 
 def xml_feed_to_json(url)
 	@xml = HTTParty.get(url)
+	
 	# convert all breed Strings to Arrays
-
 	@xml["petfinder"]["pets"].each do |pet|
 		#binding.pry
 		i = 0
